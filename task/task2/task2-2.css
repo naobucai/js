@@ -1,0 +1,113 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto; }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+img {
+  max-width: 100%; }
+
+#header {
+  position: relative;
+  padding: 3% 0;
+  text-align: center;
+  font-size: 3.2rem;
+  color: #fff;
+  background-color: #29bde0;
+  overflow: hidden; }
+  #header .icon-left {
+    position: absolute;
+    left: 3.125%;
+    width: 3.90625%;
+    display: inline-block; }
+  #header .icon-right {
+    position: absolute;
+    right: 3.125%;
+    width: 7.34375%;
+    display: inline-block; }
+
+#content {
+  padding: 20px 2.8125%;
+  background-color: #f0f0f0; }
+  #content .player {
+    overflow: hidden; }
+    #content .player .box-left {
+      float: left;
+      padding: 22.66% 6.25%;
+      font-size: 3.4rem;
+      background-color: #fff;
+      border-right: 1px solid #d9d9d9; }
+    #content .player .box-right {
+      background-color: #fbfbfb;
+      overflow: hidden; }
+      #content .player .box-right .box-right-top {
+        font-size: 2.4rem;
+        overflow: hidden; }
+        #content .player .box-right .box-right-top ul {
+          float: left;
+          padding: 5% 10%;
+          width: 37.5%;
+          list-style-type: square; }
+        #content .player .box-right .box-right-top li {
+          padding: 10% 0; }
+        #content .player .box-right .box-right-top span {
+          color: #a1a1a1; }
+        #content .player .box-right .box-right-top .orange {
+          color: #fab344; }
+        #content .player .box-right .box-right-top .blue {
+          color: #29bde0; }
+      #content .player .box-right .box-right-bottom {
+        text-align: center;
+        padding: 3% 0;
+        font-size: 2.5rem;
+        color: #29bde0;
+        width: 100%;
+        background-color: #fbfbfb;
+        border: 0;
+        border-top: 1px solid #d9d9d9; }
+  #content .phrases {
+    margin-top: 9px;
+    padding: 20px 4.375%;
+    background-color: #ffffff; }
+    #content .phrases .text {
+      width: 100%;
+      padding: 2.5% 0;
+      font-size: 2.6rem;
+      color: #d7d7d7;
+      border: 0;
+      border-bottom: 1px solid #f0f0f0; }
+  #content .people {
+    font-size: 2.6rem;
+    background-color: #fff;
+    margin-top: 10px;
+    padding: 19px 4.84375%; }
+    #content .people .number {
+      font-size: 2.6rem;
+      width: 2.6rem;
+      padding: 0 10px;
+      background-color: #f4f5f5;
+      color: #fab344;
+      border: 0; }
+  #content .deal {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 3.6rem;
+    padding: 3% 0;
+    background-color: #fab344;
+    border: 0;
+    color: #fff; }
+
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 50%; } }
+@media screen and (max-width: 440px) {
+  html {
+    font-size: 40%; } }
+
+/*# sourceMappingURL=task2-2.css.map */

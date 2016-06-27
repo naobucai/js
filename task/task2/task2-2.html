@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>身份发放</title>
+    <link rel="stylesheet" type="text/css" href="task2-2.css"/>
+
+</head>
+<body>
+    <header id="header">
+        <div class="icon-left"><img src="img/back.gif"></div>
+        <span>参数设置</span>
+        <div class="icon-right"><img src="img/help.gif"></div>
+    </header>
+
+    <div id="content">
+        <div class="player">
+            <div class="box-left">
+                <p>玩</p>
+                <p>家</p>
+                <p>配</p>
+                <p>比</p>
+            </div>
+
+            <div class="box-right">
+                <div class="box-right-top">
+                    <ul>
+                        <li class="orange"><span>杀&nbsp;手 <span class="peopleNum">0</span> 人</span></li>
+                        <li class="blue"><span>平&nbsp;民 <span class="peopleNum">0</span> 人</span></li>
+                        <li class="orange"><span>警&nbsp;察 0 人</span></li>
+                        <li class="blue"><span>医&nbsp;生 0 人</span></li>
+                        <li class="orange"><span>狙击手 0 人</span></li>
+                    </ul>
+
+                    <div class="randomPeople"></div>
+                </div>
+
+                <button onclick="setter()" class="box-right-bottom">
+                    点击设置 <img src="img/setter.gif"/>
+                </button>
+            </div>
+        </div>
+
+        <div class="phrases">
+            <label><input class="text" type="text" value="水民词组"/></label>
+            <label><input class="text" type="text" value="幽灵词组"/></label>
+        </div>
+
+        <div class="people">
+            <label>玩家人数 <input class="number" type="text" value="18"/> 人（输入6-18的整数）</label>
+        </div>
+
+        <button class="deal">去发牌</button>
+    </div>
+
+
+    <script src="task2-2.js"></script>
+
+</body>
+</html>

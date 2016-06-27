@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.box {
+    overflow: hidden;
+}
+
+.checks {
+    padding: 15%;
+    background-color: #d58512;
+    display: block;
+    list-style: none;
+    float: left;
+    margin: 1.6%;
+    border-radius: 5%;
+}
