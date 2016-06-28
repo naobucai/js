@@ -1,10 +1,12 @@
 /**
  * Created by john on 2016-06-27.
  */
+/*取出输入的人数*/
+var peopleNumber = document.getElementsByClassName("number")[0];
 
 function setter() {
-    /*取出输入的人数*/
-    var peopleNumber = document.getElementsByClassName("number")[0];
+    
+
 
     /*判断输入的数值是否正确*/
     if (peopleNumber.value >=6 && peopleNumber.value <= 18 &&
@@ -26,7 +28,7 @@ function setter() {
             document.getElementsByClassName("peopleNum")[i].innerHTML = String(peopleNum[i]);
         }
 
-        random(peopleNumber.value, killer, populist);
+        random(killer, populist);
 
         console.log("总人数为" + peopleNumber.value,
             "杀手为"+killer, "平民为" + populist);
@@ -37,9 +39,11 @@ function setter() {
     }
 }
 
+var peopleArray = [];
+
 /*随机分配杀手平民函数*/
-function random(peopleNumber, killer, populist) {
-    var peopleArray = [];
+function random(killer, populist) {
+
 
     /*添加杀手到数组*/
     for (var n = 0; n < killer; n++) {
@@ -48,19 +52,35 @@ function random(peopleNumber, killer, populist) {
     }
 
     /*添加平民到数组*/
-    for (var p = killer; p <peopleNumber; p++) {
+    for (var p = killer; p <peopleNumber.value; p++) {
         peopleArray[p] = "平民";
     }
 
     /*打乱数组*/
-    peopleArray.sort(function(){ return 0.5 - Math.random() });
+    peopleArray.sort( function() {
+        return 0.5 - Math.random()
+    });
 
     var randomPeople = document.getElementsByClassName("randomPeople")[0];
 
     randomPeople.style.fontSize = "1.6rem";
 
     randomPeople.innerHTML = "";
-    for (var i = 0; i < peopleNumber; i++) {
+    for (var i = 0; i < peopleNumber.value; i++) {
         randomPeople.innerHTML += "<p>"+String(i+1) + "号是" + peopleArray[i] + "</p>";
+    }
+}
+
+/*转到查看身份页面*/
+function next() {
+    setter();
+
+    /*判断输入的数值是否正确*/
+    if (peopleNumber.value >=6 && peopleNumber.value <= 18 &&
+        parseInt(peopleNumber.value) == peopleNumber.value) {
+        location.href = "task2-3.html";
+
+        sessionStorage.array = JSON.stringify(peopleArray);
+
     }
 }
