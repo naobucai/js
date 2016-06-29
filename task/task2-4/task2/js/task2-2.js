@@ -21,7 +21,7 @@ function next() {
 
 function OnInput(event) {
     value = event.target.value;
-
+    
     if (value != preValue) {
 
         // 判断输入的数值是否正确
@@ -40,28 +40,30 @@ function isTrue() {
     if (value >= 6 && value <= 18 &&
         parseInt(value) == value) {
 
-        // 计算杀手人数
-        var killer = Math.floor(value / 4);
 
-        console.log(killer, value-killer);
-
-        if (value == 8) killer = 1;
-
-        // 改变界面上杀手的人数
-        // 改变界面上平民的人数
-        var peopleNum = [killer, value -1 ];
-
-        for (var i = 0; i < 2; i++) {
-            document.getElementsByClassName("peopleNum")[i].innerHTML = String(peopleNum[i]);
-        }
-
-        random(killer);
-
-        text.style.color = "#fab344";
 
         if (isClick) {
             isClick = 0;
-            location.href = "task2-3.html";
+            location.href = "../task3/task3.html";
+        } else {
+            // 计算杀手人数
+            var killer = Math.floor(value / 4);
+
+            console.log(killer, value-killer);
+
+            if (value == 8) killer = 1;
+
+            // 改变界面上杀手的人数
+            // 改变界面上平民的人数
+            var peopleNum = [killer, value -1 ];
+
+            for (var i = 0; i < 2; i++) {
+                document.getElementsByClassName("peopleNum")[i].innerHTML = String(peopleNum[i]);
+            }
+
+            random(killer);
+
+            text.style.color = "#fab344";
         }
 
     } else {

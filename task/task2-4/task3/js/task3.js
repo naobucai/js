@@ -15,31 +15,32 @@ function clickBtn() {
     console.log(clickNum);
 
     var i = (clickNum + 1) / 2 ;  // 计算页数
-    if (i == people.length) { // 判断页数是否为数组总数
-        // 改变成图片2
-        document.getElementsByClassName("image")[0].src = "img/icon2.gif";
+    // if (i == people.length) { // 判断页数是否为数组总数
+    //     // 改变成图片2
+    //     document.getElementsByClassName("image")[0].src = "img/icon2.gif";
+    //
+    //     // 更改按钮title
+    //     document.getElementsByClassName("btn")[0].innerHTML = "法官查看";
+    //
+    //     // 取得身份name
+    //     var name = document.getElementsByClassName("name")[0];
+    //     name.style.display = "inline";  // 取消隐藏元素
+    //     name.innerHTML = "身份：" + people[peopleNum-1]; // 设置身份
+    // }
 
-        // 更改按钮title
-        document.getElementsByClassName("btn")[0].innerHTML = "法官查看";
-
-        // 取得身份name
-        var name = document.getElementsByClassName("name")[0];
-        name.style.display = "inline";  // 取消隐藏元素
-        name.innerHTML = "身份：" + people[peopleNum-1]; // 设置身份
-    }
-
-    else if (i > people.length) { // 当页数大于数组总数时跳转页面
-        location.href = "task2-4.html";
+    //else
+    if (i > people.length) { // 当页数大于数组总数时跳转页面
+        location.href = "../task4/task4-1.html";
     }
 
     else {
-        check();    // 点击按钮更改页面内容方法
+        check(i);    // 点击按钮更改页面内容方法
     }
 }
 
 console.log(people);
 
-function check() {
+function check(i) {
 
     // 取得图片 class
     var image = document.getElementsByClassName("image")[0];
@@ -50,7 +51,7 @@ function check() {
 
     // 判断 点击次数是否为偶数 当次数为偶数时显示页面1 否则显示页面2
     if (clickNum % 2 == 0) {
-        image.src = "img/icon1.gif";
+        image.src = "../img/icon1.gif";
         btnTitle.innerHTML = "查看" + peopleNum + "号身份";
         document.getElementsByClassName("number")[0].innerHTML = peopleNum;
         name.style.display = "none";
@@ -58,9 +59,15 @@ function check() {
     } else {
         name.innerHTML = "身份：" + people[peopleNum-1];
         peopleNum ++;
-        image.src = "img/icon2.gif";
-        btnTitle.innerHTML = "隐藏并传递给" + peopleNum + "号";
+        image.src = "../img/icon2.gif";
+
         name.style.display = "inline";
+
+        if (i == people.length) {
+            btnTitle.innerHTML = "法官查看";
+        } else {
+            btnTitle.innerHTML = "隐藏并传递给" + peopleNum + "号";
+        }
 
     }
 }

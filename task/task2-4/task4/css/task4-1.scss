@@ -2,7 +2,6 @@ html {
     font-size: 62.5%;
 }
 
-
 body {
 
     min-width: 320px;
@@ -115,8 +114,8 @@ body {
 
 #content {
     overflow: hidden;
-    padding-bottom: 190px;
-    margin-top: 20px;
+    padding-bottom: 260px;
+    padding-top: 20px;
 }
 
 .card {
@@ -159,6 +158,10 @@ body {
 
 .content9 {
     background-color: #29bde0;
+}
+
+.footer-btn:hover {
+    cursor:pointer;
 }
 
 @media screen and (max-width: 540px){

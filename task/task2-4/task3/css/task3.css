@@ -1,0 +1,81 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto; }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+img {
+  max-width: 100%; }
+
+#header {
+  position: relative;
+  padding: 3% 0;
+  text-align: center;
+  font-size: 3.2rem;
+  color: #fff;
+  background-color: #29bde0;
+  overflow: hidden; }
+  #header .icon-left {
+    position: absolute;
+    left: 3.125%;
+    width: 3.90625%;
+    display: inline-block; }
+  #header .icon-right {
+    position: absolute;
+    right: 3.125%;
+    width: 5.78125%;
+    display: inline-block; }
+
+#content {
+  background-color: #29bde0;
+  border-top: 1px solid #74d4eb;
+  padding: 13.75%; }
+  #content .card {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 655px;
+    background-color: #ffedc5;
+    border: 4px solid #fff; }
+    #content .card .name {
+      font-size: 3.5rem;
+      color: #29bde0; }
+    #content .card .icon {
+      margin-top: 181px;
+      margin-bottom: 50px; }
+    #content .card .number {
+      position: absolute;
+      top: -36px;
+      left: 50%;
+      margin-left: -36px;
+      width: 68px;
+      height: 68px;
+      border-radius: 34px;
+      border: 3px solid #ffedc5;
+      background-color: #ffffff;
+      font-size: 32px;
+      line-height: 68px;
+      color: #f56b81;
+      font-weight: 800; }
+  #content .btn {
+    width: 100%;
+    font-size: 4.2rem;
+    padding: 2% 0;
+    background-color: #fbb435;
+    margin-top: 8%;
+    color: #fff; }
+
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 50%; } }
+@media screen and (max-width: 440px) {
+  html {
+    font-size: 40%; } }
+
+/*# sourceMappingURL=task2-3.css.map */
