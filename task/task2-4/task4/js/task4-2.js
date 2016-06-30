@@ -19,6 +19,14 @@ $(document).ready(function () {
 
    });
 
+    var day = parseInt(sessionStorage.deaths);
+
+    console.log(day);
+
+    day = sessionStorage.deaths == undefined ? day = 1 : (day / 2) + 1 ;
+
+    $(".day").html(day);
+
     $(".killerClick").click(function () {
        // isKill = 1;
         location.href = "task4-3.html"
