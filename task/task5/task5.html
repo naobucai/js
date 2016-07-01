@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $.get('test.php', function (data) {
+                //var a = JSON.stringify(data);
+                var a = data.substring(0,data.length-1);
+                a = a.replace("HeWeather data service 3.0","weather");
+                var b = JSON.parse(a);
+
+                var c = b.weather[0];
+
+                var city = c.basic.city; // 城市
+                var now = c.now.cond.txt; //天气
+                var tmp = c.now.tmp; //气温
+                var qlty = c.aqi.city.qlty; // 空气质量
+                var time = c.basic.update.loc; // 更新时间
+
+                $("#weather").html("城市：" + city + "<br>" + "天气：" + now + "<br>"
+                    + "气温：" + tmp + "度" + "<br>" + "空气质量：" + qlty + "<br>" + "更新时间：" + time);
+
+                console.log(c);
+                console.log(city, now, tmp, qlty, time);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="weather"></div>
+</body>
+</html>
