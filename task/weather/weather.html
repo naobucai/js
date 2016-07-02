@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $("#city").focus(); //进入网页时便聚焦到文本框
+
+            $("#add").click(function () {
+
+                $("#daily_forecast").html(" ");
+
+                text = $("#city").val();
+                console.log(text);
+
+                // 判断输入的是否是中文
+                var myReg = /^[\u4e00-\u9fa5]+$/;
+                if (myReg.test($("input[type=text]").val())) {
+                    addCity(text)
+                } else {
+                    alert("输入错误");
+                }
+            });
+
+            // 获取城市数组
+            var city;
+            $.get('city.php', function (data) {
+                city = data.substring(0,data.length-1);
+                city = JSON.parse(city);
+                city = city.city_info;
+                console.log(city);
+            });
+
+            // 判断城市是否存在，并获得城市id
+            function addCity(text) {
+                console.log("获取id");
+                var id = -1;
+
+                for (var index = 0; index < city.length; index++) {
+                    if (text == city[index].city) {
+                        id = city[index].id;
+                        console.log("ID为", id);
+                        addWeather(id);
+                    }
+                }
+
+                if (id == -1) alert("查询不到输入的城市！");
+
+//                if (index == -1) {
+//                    alert("查询不到输入的城市！");
+//                }
+//                else {
+//
+//                }
+            }
+
+            // 获取天气函数
+
+            function addWeather(id) {
+
+                var url = 'weather.php?city=' + id;
+
+                $.get(url, function (data) {
+                    //var a = JSON.stringify(data);
+                    // JSON数据最后会多出一个1导致数据解析错误，所以删掉最后一个数
+                    var a = data.substring(0,data.length-1);
+
+                    // 将HeWeather data service 3.0 替换成 weather 方便调用
+                    a = a.replace("HeWeather data service 3.0","weather");
+
+                    var b = JSON.parse(a);
+                    var weather = b.weather[0];
+
+                    var city = weather.basic.city; // 城市
+                    var now = weather.now.cond.txt; //天气
+                    var tmp = weather.now.tmp; //气温
+                    var qlty = weather.aqi.city.qlty; // 空气质量
+                    var time = weather.basic.update.loc; // 更新时间
+
+                    var daily_forecast = weather.daily_forecast; //未来天气
+
+                    // 实时天气
+                    $("#weather").html("城市：" + city + "<br>" + "天气：" + now + "<br>"
+                        + "气温：" + tmp + "度" + "<br>" + "空气质量：" + qlty + "<br>" + "更新时间：" + time);
+
+
+                    console.log("未来天气",daily_forecast.length);
+                    console.log(b,weather);
+                    console.log(city, now, tmp, qlty, time);
+
+                    // 未来天气
+                    for (var i = 0; i < daily_forecast.length; i++) {
+                        var date = daily_forecast[i].date; // 时间
+                        var day = daily_forecast[i].cond.txt_d; // 白天天气
+                        var night = daily_forecast[i].cond.txt_n; //夜间天气
+                        var minTmp = daily_forecast[i].tmp.min; //最低气温;
+                        var maxTmp = daily_forecast[i].tmp.max; //最高气温;
+
+                        console.log("时间：",date,"白天天气：", day, "夜间天气："
+                            , night, "最低气温：", minTmp, "最高气温：", maxTmp);
+
+                        $("#daily_forecast").append("时间：", date,
+                            "<br>白天天气：", day, "-----夜间天气："
+                            , night, "<br>最低气温：", minTmp, "-----最高气温：", maxTmp + "<br><br>");
+                    }
+
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <label>请输入城市：<input id="city" type="text"/></label>
+    <button id="add">提交</button>
+    <div>当前天气：</div>
+    <div id="weather"></div>
+    <br>
+    <div>未来天气：</div>
+    <div id="daily_forecast"></div>
+
+</body>
+</html>
