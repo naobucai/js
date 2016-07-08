@@ -1,0 +1,95 @@
+html {
+  font-size: 62.5%; }
+
+body {
+  max-width: 640px;
+  min-width: 320px;
+  margin: 0 auto; }
+
+* {
+  padding: 0;
+  margin: 0; }
+
+img {
+  max-width: 100%; }
+
+#header {
+  position: relative;
+  padding: 3% 0;
+  text-align: center;
+  font-size: 3.2rem;
+  color: #fff;
+  background-color: #29bde0;
+  overflow: hidden; }
+  #header .icon-left {
+    position: absolute;
+    left: 3.125%;
+    width: 3.90625%;
+    display: inline-block; }
+  #header .icon-right {
+    position: absolute;
+    right: 3.125%;
+    width: 5.78125%;
+    display: inline-block; }
+
+#content {
+  padding: 34px 1.25%;
+  border-top: 1px #ffffff solid;
+  background-color: #f0f0f0; }
+  #content .box {
+    background-color: #f7f7f7;
+    border: 1px solid #c9c9c9; }
+    #content .box .btn {
+      position: relative;
+      width: 100%;
+      padding: 3% 0;
+      font-size: 2.8rem;
+      background-color: #f7f7f7;
+      border: 0;
+      border-bottom: 1px solid #c9c9c9;
+      color: #24a7c6;
+      font-weight: 400; }
+      #content .box .btn img {
+        position: absolute;
+        right: 2%;
+        top: 45%;
+        width: 4.6875%; }
+    #content .box .course {
+      position: relative;
+      padding: 30px 0;
+      border-left: 2px solid #c9c9c9;
+      margin-left: 5.625%; }
+      #content .box .course img {
+        position: absolute;
+        width: 9%;
+        left: -4.6875%;
+        top: 60px; }
+      #content .box .course .title {
+        position: relative;
+        margin: 20px 8.5%;
+        padding: 4.5% 0;
+        font-size: 2.6rem;
+        text-align: center;
+        color: #fff;
+        background-color: #24a7c6; }
+        #content .box .course .title .triangle {
+          position: absolute;
+          left: -42px;
+          top: 50%;
+          margin-top: -16px;
+          border-left: 22px transparent solid;
+          border-right: 22px #24a7c6 solid;
+          border-top: 16px transparent solid;
+          border-bottom: 16px transparent solid; }
+
+.killerClick:hover {
+  cursor: pointer; }
+
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 50%; } }
+@media screen and (max-width: 440px) {
+  html {
+    font-size: 40%; } }
+
+/*# sourceMappingURL=step.css.map */

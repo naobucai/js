@@ -1,0 +1,52 @@
+<header id="header">
+    <div class="icon-left"><img src="images/back.gif"></div>
+    <span>游戏过程</span>
+    <div class="icon-right"><img src="images/close.gif"></div>
+</header>
+
+<div id="content">
+
+    <div class="box">
+        <button ng-click="clickBtn()" class="btn btnClick">第<span class="day">1</span>天<img src="images/zhankai.gif"/></button>
+        <div ng-hide="isShow">
+            <div class="course">
+                <img src="images/night.gif"/>
+                <div ng-click="next()" class="title killerClick">
+                    <div class="triangle"></div>
+                    杀手杀人
+                </div>
+                <div class="title">
+                    <div class="triangle"></div>
+                    警察验人
+                </div>
+                <div class="title">
+                    <div class="triangle"></div>
+                    狙击击人
+                </div>
+                <div class="title">
+                    <div class="triangle"></div>
+                    医生救人
+                </div>
+            </div>
+            <div class="course">
+                <img src="images/day.gif"/>
+                <div class="title">
+                    <div class="triangle"></div>
+                    亡灵发表遗言
+                </div>
+                <div class="title">
+                    <div class="triangle"></div>
+                    玩家依次发言
+                </div>
+                <div class="title">
+                    <div class="triangle"></div>
+                    投票
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

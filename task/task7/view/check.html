@@ -1,0 +1,38 @@
+<header class="navbar">
+    <div class=" left">
+        <img src="images/back.gif"/>
+    </div>
+    <div class="title">
+        <span>法官查看</span>
+    </div>
+
+    <a href="">
+        <div class="right">
+            <img src="images/close.gif"/>
+        </div>
+    </a>
+
+
+</header>
+
+<div class="content9">
+
+    <div id="content1">
+        <div ng-repeat="people in peoples track by $index" class="card">
+                <div class="border">
+                    <div ng-bind="people" class="identity"></div>
+                    <div ng-bind="$index+1 + '号'" class="number"></div>
+                </div>
+                <div ng-hide="true" class="bottom-img"><img src="images/icon.gif"/></div>
+            </div>
+    </div>
+
+</div>
+
+<footer class="footer">
+
+    <div ng-click="clickBtn()" class="footer-btn">
+        <span>开始游戏</span>
+    </div>
+
+</footer>

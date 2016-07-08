@@ -1,0 +1,49 @@
+
+
+<header id="header">
+    <div class="icon-left"><img src="images/back.gif"></div>
+    <span>参数设置</span>
+    <div class="icon-right"><img src="images/help.gif"></div>
+</header>
+
+<div id="content">
+        <div class="player">
+            <div class="box-left">
+                <p>玩</p>
+                <p>家</p>
+                <p>配</p>
+                <p>比</p>
+            </div>
+
+            <div class="box-right">
+                <div class="box-right-top">
+                    <ul>
+                        <li class="orange"><span>杀&nbsp;手 <span ng-bind="killer">0</span> 人</span></li>
+                        <li class="blue"><span>平&nbsp;民 <span ng-bind="populist">0</span> 人</span></li>
+                        <li class="orange"><span>警&nbsp;察 0 人</span></li>
+                        <li class="blue"><span>医&nbsp;生 0 人</span></li>
+                        <li class="orange"><span>狙击手 0 人</span></li>
+                    </ul>
+                </div>
+
+                <button ng-click="setting()" class="box-right-bottom">
+                    点击设置 <img src="images/setter.gif"/>
+                </button>
+            </div>
+        </div>
+
+        <div class="phrases">
+            <label><input class="text" type="text" value="水民词组"/></label>
+            <label><input class="text" type="text" value="幽灵词组"/></label>
+        </div>
+
+        <div class="people">
+            <label ng-class="{true: 'black', false: 'red'}[isErr]">
+                玩家人数<input ng-model="number" class="number" type="number"/> 人（输入6-18的整数）
+            </label>
+        </div>
+
+        <button ng-click="clickBtn()" class="deal">去发牌</button>
+    </div>
+
+
