@@ -25,7 +25,7 @@ body {
 .left {
     float: left;
     margin-left: 3.75%;
-    width: 9%;
+    width: 3.90625%;
     max-width: 40px;
 }
 
@@ -38,7 +38,7 @@ body {
     float: right;
     margin-right: 3.75%;
     color: #ffffff;
-    width: 8%;
+    width: 5.78125%;
     max-width: 36px;
 }
 
@@ -131,6 +131,7 @@ body {
     position: absolute;
     width: 100%;
     margin-top: 10%;
+    visibility: hidden;
 }
 
 .bottom-img img {
@@ -162,6 +163,11 @@ body {
 
 .footer-btn:hover {
     cursor:pointer;
+}
+
+.click {
+    background-color: #ccc;
+    visibility: inherit;
 }
 
 @media screen and (max-width: 540px){

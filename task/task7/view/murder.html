@@ -28,22 +28,23 @@
         <span class="ChangeText">点击一个玩家头像将他杀死</span>
     </div>
 
+
+
     <div id="content">
 
         <div ng-repeat="people in peoples track by $index" class="card">
-                <div class="border">
-                    <div ng-bind="people" class="identity"></div>
+            <div class="border">
+                    <div ng-click="clickPeople($index)" ng-class="isClick($index)" ng-bind="people" class="identity"></div>
                     <div ng-bind="$index+1 + '号'" class="number"></div>
                 </div>
-                <div class="bottom-img"><img src="images/icon.gif"/></div>
-            </div>
+            <div ng-class="isClick($index)" class="bottom-img"><img src="images/icon.gif"/></div>
+        </div>
     </div>
 
 </div>
 
 <footer class="footer">
-
-    <div class="footer-btn">
+    <div ng-click="clickBtn()" class="footer-btn">
         <span>确定</span>
     </div>
 

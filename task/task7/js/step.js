@@ -15,8 +15,7 @@ angular.module('myApp', [])
 
         };
 
-
-            $scope.next = function () {
+        $scope.next = function () {
             $state.go('murder', {peoples: $state.params.peoples})
         }
 

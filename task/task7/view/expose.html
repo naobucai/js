@@ -1,0 +1,42 @@
+
+<header class="navbar2">
+    <div class=" left">
+        <img src="images/back.gif"/>
+    </div>
+    <div class="title">
+        <span>黑夜解密</span>
+    </div>
+
+    <a href="">
+        <div class="right">
+            <img src="images/close.gif"/>
+        </div>
+    </a>
+</header>
+
+<div id="content2">
+    <div class="icon"><img src="images/expose.gif"></div>
+    <div class="box">
+        <p ng-bind="text"></p>
+    </div>
+</div>
+
+<footer class="footer2">
+    <div ng-hide="isHide">
+        <div class="footer-text">
+            亡灵发表遗言
+
+        </div>
+        <div class="footer-icon"><img src="images/jiantou.gif"/></div>
+        <div class="footer-text">
+            玩家依次发言讨论
+
+        </div>
+        <div class="footer-icon"><img src="images/jiantou.gif"/></div>
+    </div>
+
+
+    <div ng-click="clickBtn()" ng-bind="btnTitle" class="footer-btn">去投票</div>
+
+</footer>
+
